@@ -1,0 +1,165 @@
+definitions:
+  handler.request:
+    properties:
+      codigo:
+        type: string
+      color:
+        type: string
+      fechaCreacion:
+        type: string
+      nombre:
+        type: string
+      precio:
+        type: number
+      publicado:
+        type: boolean
+      stock:
+        type: integer
+    type: object
+  web.Response:
+    properties:
+      code:
+        type: string
+      data: {}
+      error:
+        type: string
+    type: object
+info:
+  contact:
+    name: David
+    url: https://developers.mercadolibre.com.ar/support
+  description: API para productos de MELI Bootcamp
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://developers.mercadolibre.com.ar/es_ar/terminos-y-condiciones
+  title: MELI Bootcamp API GO
+  version: "1.0"
+paths:
+  /products:
+    get:
+      consumes:
+      - application/json
+      description: getAll products
+      parameters:
+      - description: token
+        in: header
+        name: token
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/web.Response'
+      summary: Listar Productos de API
+      tags:
+      - Products
+    post:
+      consumes:
+      - application/json
+      description: post products
+      parameters:
+      - description: token
+        in: header
+        name: token
+        required: true
+        type: string
+      - description: Product to store
+        in: body
+        name: product
+        required: true
+        schema:
+          $ref: '#/definitions/handler.request'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/web.Response'
+      summary: cargar productos a la API
+      tags:
+      - Products
+  /products/id:
+    delete:
+      consumes:
+      - application/json
+      description: deletear  productos
+      parameters:
+      - description: token
+        in: header
+        name: token
+        required: true
+        type: string
+      - description: Product to delete
+        in: body
+        name: product
+        required: true
+        schema:
+          $ref: '#/definitions/handler.request'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/web.Response'
+      summary: Delete products
+      tags:
+      - Products
+    patch:
+      consumes:
+      - application/json
+      description: updatear nombre y precio productos
+      parameters:
+      - description: token
+        in: header
+        name: token
+        required: true
+        type: string
+      - description: Product to update NyP
+        in: body
+        name: product
+        required: true
+        schema:
+          $ref: '#/definitions/handler.request'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/web.Response'
+      summary: UpdateNyP products
+      tags:
+      - Products
+    put:
+      consumes:
+      - application/json
+      description: updatear productos
+      parameters:
+      - description: token
+        in: header
+        name: token
+        required: true
+        type: string
+      - description: Product to update
+        in: body
+        name: product
+        required: true
+        schema:
+          $ref: '#/definitions/handler.request'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/web.Response'
+      summary: Update products
+      tags:
+      - Products
+swagger: "2.0"

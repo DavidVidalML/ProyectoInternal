@@ -1,0 +1,32 @@
+[
+ {
+  "id": 1,
+  "nombre": "Ford Fiesta Max",
+  "color": "Verde",
+  "precio": 4500000,
+  "stock": 40,
+  "codigo": "45A5533J",
+  "publicado": true,
+  "fechaCreacion": "23/12/2021"
+ },
+ {
+  "id": 3,
+  "nombre": "Renault Sandero",
+  "color": "bordo",
+  "precio": 4500000,
+  "stock": 40,
+  "codigo": "45A5533J",
+  "publicado": true,
+  "fechaCreacion": "23/12/2021"
+ },
+ {
+  "id": 4,
+  "nombre": "Renault Megane",
+  "color": "Gris",
+  "precio": 4500000,
+  "stock": 40,
+  "codigo": "45A5533J",
+  "publicado": true,
+  "fechaCreacion": "23/12/2021"
+ }
+]
